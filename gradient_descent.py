@@ -11,6 +11,8 @@ def fwb_x(X, w, b):
 # Gradient descent implementation
 def gradient_descent(X, y, w, b, alpha=0.05, iterations=100):
     m = len(X)
+    it = []
+    costJ = []
     for i in range(iterations):
         # prediction
         fwbx = fwb_x(X, w, b)
@@ -18,7 +20,7 @@ def gradient_descent(X, y, w, b, alpha=0.05, iterations=100):
         e = fwbx - y
         Jwb = 1/(2*m) * np.dot( e.T, e )
         # Gradient descent step
-        if Jwb < 0.02:
+        if Jwb < 0.01:
             break
         partialJw = 1/m * np.dot (e, X )
         partialJb = 1/m * np.sum(e)
@@ -29,7 +31,17 @@ def gradient_descent(X, y, w, b, alpha=0.05, iterations=100):
         
 
         if i % 10 == 0:
+            it.append(i)
+            costJ.append(Jwb)
             print("Cost after iteration %d: %f" % (i, Jwb))
+
+    plt.plot(it,costJ)
+    plt.title('Gradient Descent Linear Regression J')
+    plt.xlabel('Iterations')
+    plt.ylabel('Cost J')
+    const_line = [0.01985] * len(it)
+    plt.plot(it, const_line, linestyle=':', linewidth=1.0, color='red')
+    plt.show()
 
     return w,b
 
