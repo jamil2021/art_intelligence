@@ -92,3 +92,6 @@ with torch.no_grad():
         correct += (predicted == labels).sum().item()
 
 print('Test accuracy:', correct / total)
+
+
+# Example of TensorFlow without Keras
