@@ -4,7 +4,7 @@ import tensorflow as tf
 model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),  # Flatten the input image to a 1D array
     tf.keras.layers.Dense(128, activation='relu'),  # Dense hidden layer with ReLU activation
-    tf.keras.layers.Dense(10, activation='softmax')  # Output layer with softmax activation
+    tf.keras.layers.Dense(8, activation='softmax')  # Output layer with softmax activation
 ])
 
 # Compile the model
