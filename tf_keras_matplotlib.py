@@ -26,7 +26,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # Train the model and capture the history
-history = model.fit(x_train, y_train, epochs=10, validation_split=0.2)
+history = model.fit(x_train, y_train, epochs=5, validation_split=0.2)
 
 # Plot training & validation accuracy values
 plt.figure(figsize=(12, 4))
