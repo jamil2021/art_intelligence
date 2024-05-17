@@ -45,7 +45,7 @@ y = 0.3 * X + res
 w = 0.2
 b = 0.2
 # alpha = 0.005
-iterations = 300
+iterations = 200
 w1,b1,it1,costJ1 = gradient_descent(X, y, w, b, 0.05, iterations)
 w2,b2,it2,costJ2 = gradient_descent(X, y, w, b, 0.005, iterations)
 print(f"w = {w1}, b = {b1}")
